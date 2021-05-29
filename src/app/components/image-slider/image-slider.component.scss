@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  .image-slider {
+    display: flex;
+    // 裁剪 div 元素中内容的左/右边缘 - 如果溢出元素的内容区域的话
+    overflow-x: scroll;
+  }
+  .nav-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.5;
+    color: #fff;
+    background-color: #000;
+    
+  }
+}

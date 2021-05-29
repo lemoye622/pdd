@@ -1,0 +1,35 @@
+ul {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  /*默认就是横排*/
+  /* flex-direction: row; */
+}
+ul li {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+  /*规定段落中的文本不进行换行*/
+  white-space: nowrap;
+}
+a {
+  /*没有文本装饰，即去除下划线*/
+  text-decoration: none;
+}
+/*去除真机测试会出现的滚动条(F12移动端模拟器上是看不出来的）*/
+::-webkit-scrollbar {
+  display: none;
+}
+.active {
+  color: red;
+}
+.first {
+  color: blue;
+}
+.indicator {
+  /* background-color: gold; */
+  height: 2px;
+  width: 2rem;
+  margin-top: 2px;
+}
