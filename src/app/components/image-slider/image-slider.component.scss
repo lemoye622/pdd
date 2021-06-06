@@ -5,15 +5,19 @@
     display: flex;
     // 裁剪 div 元素中内容的左/右边缘 - 如果溢出元素的内容区域的话
     overflow-x: scroll;
+    // smooth ——> 窗口平稳滚动; auto ——> 立即滚动
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    // 强制在横轴上吸附
+    // mandatory 表示强制将滚动结束后元素的停留位置设置到我们规定的地方
     scroll-snap-type: x mandatory;
   }
   img {
     width: 100%;
     height: 100%;
-    // 保持原有尺寸比例,但部分内容可能被剪切
+    // 保持原有尺寸比例,但部分内容可能被剪切(图片比较大，可能显示不全，所以用该属性)
     object-fit: cover;
+    // 吸附的对齐方式的起始位置
     scroll-snap-align: start;
   }
   .nav-section {
@@ -35,6 +39,9 @@
       text-decoration: none; // 没有文本装饰
       border-radius: 50%;
       margin: 5px;
+    }
+    .slide-button-select {
+      background-color: red;
     }
   }
 }
