@@ -4,6 +4,8 @@ ul {
   display: flex;
   /*默认就是横排*/
   /* flex-direction: row; */
+  overflow-x: auto; /* 如果溢出框，则应该提供滚动机制。 */
+  -webkit-overflow-scrolling: touch; /* 在移动端设备，通过触摸去滚动 */
 }
 ul li {
   /* display: inline-block; */

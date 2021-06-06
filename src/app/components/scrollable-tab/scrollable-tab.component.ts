@@ -50,7 +50,7 @@ export class ScrollableTabComponent implements OnInit,OnChanges,AfterContentInit
 
   // 组件内容脏值检测
   ngAfterContentChecked(): void {
-    console.log('组件内容脏值检测');    
+    // console.log('组件内容脏值检测');    
   }
 
   // 组件视图初始化(即组件与其子组件均初始化完成）
@@ -60,7 +60,7 @@ export class ScrollableTabComponent implements OnInit,OnChanges,AfterContentInit
 
   // 组件视图脏值检测
   ngAfterViewChecked(): void {
-    console.log('组件视图脏值检测');   
+    // console.log('组件视图脏值检测');   
   }
 
   // 组件销毁

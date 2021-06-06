@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { TopMenu } from './components';
+import { Component, ViewChild } from '@angular/core';
+import { ImageSlider, ImageSliderComponent, TopMenu } from './components';
 
 // interface TopMenu {
 //   title: string;
@@ -22,6 +22,7 @@ import { TopMenu } from './components';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('imageSlider', {static: true}) imgSlider: ImageSliderComponent;
   // selectedIndex = -1;
   // title = 'pdd';
   // // tabs = ['热门', '男装', '手机'];
@@ -139,10 +140,47 @@ export class AppComponent {
     }
   ];
 
+  imageSliders: ImageSlider[] = [
+    {
+      imgUrl:
+        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b30177d629bfbe2fb42251c1b8538f7b.jpg?w=632&h=340',
+        link: '',
+        caption: ''
+    },
+    {
+      imgUrl:
+        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5d4298059889417157e8492750328492.jpg?w=632&h=340',
+        link: '',
+        caption: ''
+    },
+    {
+      imgUrl:
+        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9f18ac756fa2cedb16ea429b9c0001af.png?w=632&h=340',
+        link: '',
+        caption: ''
+    },
+    {
+      imgUrl:
+        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bca044fb5d36616dc040890dfb7887e3.jpg?thumb=1&w=1533&h=575&f=webp&q=90',
+        link: '',
+        caption: ''
+    },
+    {
+      imgUrl:
+        'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e023dd94c146d0f27f7ae8e98213abff.jpg?thumb=1&w=1533&h=575&f=webp&q=90',
+        link: '',
+        caption: ''
+    }
+  ];
+
   handleTabSelect(TopMenu: TopMenu) {
     const colors = ['red', 'blue', 'black'];
     const idx = Math.floor(Math.random() * 3);
     this.scrollableTabBgColor = colors[idx];
     console.log(TopMenu);
+  }
+
+  ngAfterViewInit(): void {
+    console.log('组件', this.imgSlider);  
   }
 }
