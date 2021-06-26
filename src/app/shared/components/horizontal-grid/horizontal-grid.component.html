@@ -1,0 +1,19 @@
+<!-- <input 
+  type="text" 
+  [value]="username" 
+  (input)="username = $event.target.value"
+/>
+<span>hello {{ username }}</span> -->
+
+
+<!-- 使用 ngModule 来完成双向绑定 -->
+<!-- <input type="text" [(ngModel)]="username"/>
+<span>Hello {{ username }}</span> -->
+
+<!-- 不用 ngModule，自己来手写一个双向绑定（破解该语法糖）-->
+<input 
+  type="text"
+  [value]="username"
+  (input)="username = $event.target.value"
+/>
+<span>Hello {{ username }}</span>

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ImageSlider, ImageSliderComponent, TopMenu } from './components';
+import { ImageSlider, ImageSliderComponent, TopMenu } from './shared/components';
 
 // interface TopMenu {
 //   title: string;
@@ -22,6 +22,8 @@ import { ImageSlider, ImageSliderComponent, TopMenu } from './components';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  username = '';
+  
   @ViewChild('imageSlider', {static: true}) imgSlider: ImageSliderComponent;
   // selectedIndex = -1;
   // title = 'pdd';
