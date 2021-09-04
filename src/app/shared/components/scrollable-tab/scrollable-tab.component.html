@@ -1,17 +1,18 @@
 <ul [ngStyle]="{'background-color': backgroundColor}">
   <li *ngFor="let menu of menus; let i = index; let f = first; trackBy: menu ? menu.title : null">
-    <a href="#"
+    <a
        [ngStyle]="{color: i === selectedIndex ? titleActiveColor : titleColor}"
        [class.first] = "f"
        (click) = "handleSelect(i)"
     >
       {{ menu.title }}
     </a>
-    <span class="indicator" [ngStyle]="{'background-color': indicatorColor}" *ngIf="i === selectedIndex else elseTemp"></span>
+    <!-- <span class="indicator" [ngStyle]="{'background-color': indicatorColor}" *ngIf="i === selectedIndex else elseTemp"></span> -->
+    <span class="indicator" [ngStyle]="{'background-color': indicatorColor}" *ngIf="i === selectedIndex"></span>
   </li>
-  <ng-template #elseTemp>
+  <!-- <ng-template #elseTemp>
     <span>985</span>
-  </ng-template>
+  </ng-template> -->
 </ul>
 <ng-content></ng-content>
 

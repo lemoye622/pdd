@@ -1,6 +1,6 @@
-<!-- <input 
-  type="text" 
-  [value]="username" 
+<!-- <input
+  type="text"
+  [value]="username"
   (input)="username = $event.target.value"
 />
 <span>hello {{ username }}</span> -->
@@ -11,9 +11,97 @@
 <span>Hello {{ username }}</span> -->
 
 <!-- 不用 ngModule，自己来手写一个双向绑定（破解该语法糖）-->
-<input 
+<input
   type="text"
   [value]="username"
   (input)="username = $event.target.value"
 />
 <span>Hello {{ username }}</span>
+<p (click)="handleClick()">Hello {{ username }}</p>
+{{ result }}
+
+<div>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>地址</th>
+        <th>手机号</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>veloma</td>
+        <td>22</td>
+        <td>山东省青岛市</td>
+        <td>133****2585</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

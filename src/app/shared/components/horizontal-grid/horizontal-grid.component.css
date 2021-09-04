@@ -1,3 +1,17 @@
 input {
   border: 1px dashed black;
 }
+
+table,
+table tr th,
+table tr td {
+  border: 1px solid #0094ff;
+}
+
+table {
+  display: inline-block;
+  margin-top: 20px;
+  overflow: auto;
+  height: 100px;
+  border-collapse: collapse;
+}

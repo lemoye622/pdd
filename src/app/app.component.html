@@ -1,15 +1,17 @@
-<app-scrollable-tab 
-  [menus]="TopMenus" 
+<!-- <app-scrollable-tab
+  [menus]="TopMenus"
   [backgroundColor]="scrollableTabBgColor"
   titleColor='orange'
   titleActiveColor='green'
   (tabSelected)="handleTabSelect($event)"
   *ngIf="scrollableTabBgColor === 'red'"
->
+> -->
   <!-- <div>Hello</div> -->
-</app-scrollable-tab>
+<!-- </app-scrollable-tab> -->
 
 <!-- <app-scrollable-tab [menus]="TopMenus2"></app-scrollable-tab> -->
-<app-image-slider [sliders]="imageSliders" #imageSlider></app-image-slider>
+<!-- <app-image-slider [sliders]="imageSliders" #imageSlider></app-image-slider>
 
-<app-horizontal-grid [(username)]="username"></app-horizontal-grid>
+<app-horizontal-grid [(username)]="username"></app-horizontal-grid> -->
+
+<router-outlet></router-outlet>

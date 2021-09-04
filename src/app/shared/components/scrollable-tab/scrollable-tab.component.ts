@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter, SimpleChange, OnChanges, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy, SimpleChanges } from '@angular/core';
 
 export interface TopMenu {
+  id: number,
   title: string;
   link: string
 }
