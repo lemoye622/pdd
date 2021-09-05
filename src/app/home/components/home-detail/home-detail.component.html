@@ -17,25 +17,26 @@
       <span></span>
     </span>
   </app-image-slider>
-  <app-horizontal-grid [(username)]="username"></app-horizontal-grid>
+  <!-- <app-horizontal-grid [(username)]="username"></app-horizontal-grid> -->
+  <app-horizontal-grid></app-horizontal-grid>
 </div>
 <ng-template #other>
   Other Works!
 </ng-template>
 
-<a
+<!-- <a
   [routerLink] = "['grand']"
   routerLinkActive = "active"
   [queryParams] = "{ name: 'hebe', age: 18}"
   >
   link to grand
-</a>
+</a> -->
 
-<a
+<!-- <a
   [routerLink] = "[{ outlets: {second: ['aux']}}]"
   >
   link to second
-</a>
+</a> -->
 
 <router-outlet></router-outlet>
 <router-outlet name="second"></router-outlet>

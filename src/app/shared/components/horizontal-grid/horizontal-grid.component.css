@@ -1,4 +1,4 @@
-input {
+/* input {
   border: 1px dashed black;
 }
 
@@ -14,4 +14,9 @@ table {
   overflow: auto;
   height: 100px;
   border-collapse: collapse;
+} */
+
+:host {
+  display: flex;
+  justify-content: center;
 }
