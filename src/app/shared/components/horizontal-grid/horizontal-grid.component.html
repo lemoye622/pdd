@@ -120,11 +120,13 @@
   <span appGridItemTitle> {{ item.title }} </span>
 </div> -->
 
-<div appGridItem *ngFor="let item of channels">
+<!-- <div appGridItem *ngFor="let item of channels">
   <img 
     appGridItemImage='375px'
     [src]="item.icon" 
     alt="" 
     [fitMode]="'cover'">
   <span appGridItemTitle='1.2rem'> {{ item.title }} </span>
-</div>
+</div> -->
+
+<ng-content></ng-content>

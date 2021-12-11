@@ -15,3 +15,14 @@
 <app-horizontal-grid [(username)]="username"></app-horizontal-grid> -->
 
 <router-outlet></router-outlet>
+
+<app-horizontal-grid>
+  <div appGridItem *ngFor="let item of channels">
+    <img 
+      appGridItemImage='375px'
+      [src]="item.icon" 
+      alt="" 
+      [fitMode]="'cover'">
+    <span appGridItemTitle='1.2rem'> {{ item.title }} </span>
+  </div>
+</app-horizontal-grid>

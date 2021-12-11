@@ -16,7 +16,8 @@ table {
   border-collapse: collapse;
 } */
 
-:host {
+/* :host {
   display: flex;
-  justify-content: center;
-}
+  // justify-content: center;
+  overflow-x: auto;
+} */
