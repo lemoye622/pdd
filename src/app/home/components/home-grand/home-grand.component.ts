@@ -22,21 +22,29 @@ class PurchaseOrder {
     }
 }
 
+export interface IProduct {
+  id: string;
+  name: string;
+  model: string;
+}
+
 @Component({
   selector: 'app-home-grand',
   templateUrl: './home-grand.component.html',
-  styleUrls: ['./home-grand.component.css']
+  styleUrls: ['./home-grand.component.scss']
 })
 export class HomeGrandComponent implements OnInit {
-  date: Date;
-  obj = { id: '001', name: '小米11', model: '曲面屏'};
-  price = 8699;
-  data = [1, 2, 3, 4, 5];
+  public currentDate: Date;
+  public price: number = 0;
+  public data: number[] = [1, 2, 3, 4, 5];
+  public productObj: IProduct = { id: '001', name: '小米11', model: '曲面屏'};
 
   constructor() { }
 
-  ngOnInit() {
-    this.date = this.minusDays(new Date(), 24);
+  public ngOnInit(): void {
+    // this.date = this.minusDays(new Date(), 24);
+    this.currentDate = new Date();
+    this.price = 123.32;
     const injector = Injector.create({
       providers: [
         {
@@ -67,7 +75,7 @@ export class HomeGrandComponent implements OnInit {
 
   }
 
-  minusDays(date: Date, days: number) {
+  public minusDays(date: Date, days: number): Date {
     const result = new Date(date);
     result.setDate(result.getDate() - days);
     return result;

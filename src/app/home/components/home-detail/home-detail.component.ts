@@ -1,31 +1,30 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ImageSlider, ImageSliderComponent } from 'src/app/shared/components';
+import { IImageSlider, ImageSliderComponent } from 'src/app/shared/components';
 import { HomeService } from '../../services';
 
 @Component({
   selector: 'app-home-detail',
   templateUrl: './home-detail.component.html',
-  styleUrls: ['./home-detail.component.css']
+  styleUrls: ['./home-detail.component.scss']
 })
 export class HomeDetailComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute, private service: HomeService) { }
-
-  username = '';
+  public username: string = '';
+  public selectedTabLink: string = '';
+  public imageSliders: IImageSlider[] = [];
 
   @ViewChild('imageSlider', {static: true}) imgSlider: ImageSliderComponent;
 
-  selectedTabLink;
+  constructor(
+    private route: ActivatedRoute, 
+    private service: HomeService
+  ) { }
 
-  imageSliders: ImageSlider[] = [];
-  // channels: Channel[] = [];
-
-  ngOnInit() {
+  public ngOnInit(): void {
     // 读取当前路由激活的参数
     this.route.paramMap.subscribe(params => {
       this.selectedTabLink = params.get('tabLink');
-      console.log('路径参数', params);
+      console.log('路径参数', params, this.selectedTabLink);
     })
 
     this.route.queryParamMap.subscribe(params => {
@@ -36,7 +35,7 @@ export class HomeDetailComponent implements OnInit {
     // this.channels = this.service.getChannels();
   }
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     console.log('组件', this.imgSlider);
   }
 }

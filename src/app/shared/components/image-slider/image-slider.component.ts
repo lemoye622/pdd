@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 
-export interface ImageSlider {
+export interface IImageSlider {
   imgUrl: string;
   link: string;
   caption: string;
@@ -12,11 +12,11 @@ export interface ImageSlider {
   styleUrls: ['./image-slider.component.scss']
 })
 export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
-  @Input() sliders: ImageSlider[] = [];
-  @Input() sliderHeight = '100px';
-  @Input() intervalBySeconds = 2;
-  selectedIndex = 0;
-  intervalId;
+  @Input() public sliders: IImageSlider[] = [];
+  @Input() public sliderHeight: string = '100px';
+  @Input() public intervalBySeconds: number = 2;
+  public selectedIndex: number = 0;
+  public intervalId: any;
   // 在Augular8.0之后，@ViewChild要指定第二个参数
   // 表示该元素是在ngIf/ngFor包含之下，即动态，static就是false，否则为true（静态）
   @ViewChild('imageSlider', {static: true}) imgSlider: ElementRef;
@@ -24,14 +24,14 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(private rd2: Renderer2) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     console.log('ngOnInit', this.imgSlider);
     // 在angular中直接操作DOM是不提倡的（容易引起注入攻击）
     // this.imgSlider.nativeElement.innerHTML = `<span>Hello Angular</span>`
     // console.log('ngOnInit2', this.imgs); // undefined
   }
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     console.log('ngAfterViewInit', this.imgs);
     // this.imgs.forEach((item) => {
     //   item.nativeElement.style.height = '100px';
@@ -50,18 +50,18 @@ export class ImageSliderComponent implements OnInit, AfterViewInit, OnDestroy {
     }, this.intervalBySeconds * 1000)
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     clearInterval(this.intervalId);
   }
 
   // 处理数组越界
-  getIndex(idx: number): number {
+  public getIndex(idx: number): number {
     return idx >= 0
     ? idx % this.sliders.length
     : this.sliders.length - (Math.abs(idx) % this.sliders.length);
   }
 
-  handleScroll(event) {
+  public handleScroll(event): void {
     // 滑动比例：往左滑动的 scrollLeft 乘以图片数组长度，再去除以整个的 scrollWidth
     // 这个比例意即：现在滑动的到没到应该找的下一张，其实就是看每张图的宽度
     // 如果超过了这一张图的宽度的一半了，那就进入下一张图片

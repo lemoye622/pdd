@@ -1,13 +1,13 @@
 // 快捷键 ag-Service
 import { Injectable } from '@angular/core';
-import { ImageSlider, TopMenu } from 'src/app/shared/components';
+import { IImageSlider, ITopMenu } from 'src/app/shared/components';
 
 @Injectable()
 export class HomeService {
 
   constructor() { }
 
-  TopMenus: TopMenu[] = [
+  TopMenus: ITopMenu[] = [
     {
       id: 1,
       title: '热门',
@@ -95,7 +95,7 @@ export class HomeService {
     }
   ];
 
-  imageSliders: ImageSlider[] = [
+  imageSliders: IImageSlider[] = [
     {
       imgUrl:
         'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b30177d629bfbe2fb42251c1b8538f7b.jpg?w=632&h=340',
@@ -129,7 +129,7 @@ export class HomeService {
   ];
 
   // 暂时写成这样，未来要写成 http 这种
-  getTabs() {
+  public getTabs(): ITopMenu[] {
     return this.TopMenus;
   };
 
@@ -137,7 +137,7 @@ export class HomeService {
   //   return this.channels;
   // };
 
-  getBanners() {
+  public getBanners(): IImageSlider[] {
     return this.imageSliders;
   }
 }
