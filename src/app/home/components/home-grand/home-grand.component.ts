@@ -36,16 +36,16 @@ export interface IProduct {
 export class HomeGrandComponent implements OnInit {
   public currentDate: Date;
   public price: number = 0;
-  public data: number[] = [1, 2, 3, 4, 5];
+  public arr: number[] = [1, 2, 3, 4, 5];
   public productObj: IProduct = { id: '001', name: '小米11', model: '曲面屏'};
 
-  constructor() { }
+  constructor() {}
 
   public ngOnInit(): void {
-    // this.date = this.minusDays(new Date(), 24);
-    this.currentDate = new Date();
+    // this.currentDate = new Date();
+    this.currentDate = this.minusDays(new Date(), 2);
     this.price = 123.32;
-    const injector = Injector.create({
+    const injector = Injector.create({ 
       providers: [
         {
           // 标识符
@@ -80,5 +80,4 @@ export class HomeGrandComponent implements OnInit {
     result.setDate(result.getDate() - days);
     return result;
   }
-
 }

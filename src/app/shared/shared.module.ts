@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent } from './components';
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
+import { AgoPipe } from './pipes';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } fro
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    AgoPipe
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } fro
     HorizontalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    AgoPipe
   ]
 })
 export class SharedModule { }
